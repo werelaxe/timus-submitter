@@ -28,7 +28,7 @@ LANGS = {
 def submit(judge_id, lang, task_id, source_code):
     data = {
         'JudgeID': io.BytesIO(judge_id.encode()),
-        'Language': io.BytesIO(lang.encode()),
+        'Language': io.BytesIO(LANGS[lang].encode()),
         'ProblemNum': io.BytesIO(str(task_id).encode()),
         'Source': io.BytesIO(source_code.encode()),
         'Action': io.BytesIO(b"submit"),
